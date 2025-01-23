@@ -1,3 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
 header{
     background-color: #f1f1f1;
     padding: 1%;
@@ -31,31 +39,46 @@ header nav a:hover {
     transform: scale(1.5) rotate(360deg); 
 }
 
-header img{
+.logo1{
     transition: 1s;
     border-radius: 20px;
-}
-
-
-header img:hover{
-    transform: scale(1.5) rotateX(360deg);
-    transition: 1s;
-}
-
-.logo1{
     width: 200px;
     height: 140px;
     margin: 0 auto;
     /* Situamos a la izquierda */
     float: right;
-    margin-top: -90px;
+    margin-top: -65px;
 }
 
 
+header img:hover{
+    transform: rotateX(360deg);
+    transition: 1s;
+}
 
 
+/* Menu hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+    transition: 0.3s;
+}
 
 
+h2{
+    text-align: center;
+    font-size: 2em;
+    margin: 20px 0;
+}
 /* Banner */
 
 .bienvenida{
@@ -79,6 +102,12 @@ header img:hover{
 .logoBienvenida{
     width: 400px;
     border-radius: 10%;
+    transition: 1s;
+}
+
+.logoBienvenida:hover{
+    transform: scale(1.1) rotateY(360deg);
+    transition: 1s;
 }
 
 
@@ -118,6 +147,12 @@ header img:hover{
     max-width: 800px;
     margin: 10px;
     border-radius: 8px;
+    transition: 1s;
+}
+
+#info img:hover {
+    transform: scale(1.1);
+    transition: 1s;
 }
 
 
@@ -146,11 +181,12 @@ header img:hover{
     height: 400px;
     border-radius: 100%;
     margin: 0 auto;
-    transition: transform 0.3s;
+    transition: transform 1s;
 }
 
 .Foto:hover{
     transform: scale(1.1);
+    box-shadow: 0 10px 80px rgba(0, 0, 0, 0.8);
 }
 
 
@@ -279,7 +315,7 @@ footer {
         grid-row-gap: 10px;
         background-color: #f9f9f9;
     }
-    
+
     .Foto{
         width: 200px;
         height: 200px;
@@ -300,8 +336,20 @@ footer {
 
 
 /* Movil */
-/* Cuando la pantalla este entre 1 y 99 de anchura se haran 8 filas 1 columans */
 @media (max-width: 767px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+    
+
     #artistes {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
